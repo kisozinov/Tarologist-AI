@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling", "hatch-requirements-txt"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tarologist-ai"
+version = "0.1.0"
+description = "Fine-tuned language model which does tarot card readings"
+authors = [{name="Kirill Sozinov", email="cirill2001@bk.ru"}]
+license = "MIT"
+readme = "README.md"
+dynamic = ["dependencies"]
+
+[tool.hatch.build]
+exclude = [
+  "dist/*",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["tarologist-AI"]
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
+
+
